@@ -25,6 +25,8 @@ gem 'devise'
 
 gem 'paperclip'
 
+gem 'gmaps4rails'
+
 group :development do
 
   gem 'byebug'

@@ -1,5 +1,48 @@
 <h1>Portland Murals</h1>
 
-<div id="map_wrapper">
-  <div id="map_canvas" class="mapping"></div>
+<div style='width: 1200px;'>
+  <div id="sidebar_builder" style='width: 1200px; height: 600px;'></div>
 </div>
+<div id='sidebar_container'>
+</div>
+
+<script type="text/javascript">
+  function createSidebarLi(json){
+  return ("<li><a>" + json.name + "</a></li>");
+  };
+
+  function bindLiToMarker($li, marker){
+  $li.on('click', function(){
+    handler.getMap().setZoom(14);
+    marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+  };
+
+  function createSidebar(json_array){
+  _.each(json_array, function(json){
+    var $li = $( createSidebarLi(json) );
+    $li.appendTo('#sidebar_container');
+    bindLiToMarker($li, json.marker);
+  });
+  };
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+  var json_array = [
+    { lat: 45.559257, lng: -122.643864, name: "Keep Your Chin Up", infowindow: "Keep Your Chin Up" },
+    { lat: 45.521380, lng: -122.682764, name: "Lady in Dress", infowindow: "Lady in Dress" }
+  ];
+
+  var markers = handler.addMarkers(json_array);
+
+  _.each(json_array, function(json, index){
+    json.marker = markers[index];
+  });
+
+  createSidebar(json_array);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  });
+</script>
