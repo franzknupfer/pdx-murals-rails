@@ -1,0 +1,17 @@
+<h1>Add a mural</h1>
+
+  <%= bootstrap_form_for @mural, :url => murals_path, :html => { :multipart => true} do |f| %>
+    <%= f.text_field :mural_name %>
+    <br>
+    <%= f.text_area :year_created %>
+    <br>
+    <%= f.text_area :artist_name %>
+    <%= f.text_area :artist_name2 %>
+    <%= f.text_area :artist_name3 %>
+    <%= f.text_area :mural_address %>
+    <%= f.text_area :photo_credit %>
+    <!-- <%= f.file_field :attached_image %> -->
+    <br>
+    <%= f.submit "Add mural", class: "btn btn-success" %>
+  <% end %>
+</div>
