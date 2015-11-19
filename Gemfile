@@ -27,6 +27,8 @@ gem 'paperclip'
 
 gem 'gmaps4rails'
 
+gem 'geocoder'
+
 group :development do
 
   gem 'byebug'

@@ -7,7 +7,7 @@
 </div>
 
 <% @murals.each do |mural| %>
-  <p><%= mural.mural_name %></p>
+  <p><%= link_to mural.mural_name, mural_path(mural) %></p>
 <% end %>
 
 

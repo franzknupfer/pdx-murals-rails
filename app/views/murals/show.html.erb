@@ -1,0 +1,6 @@
+<h1><%= @mural.mural_name %>  <%= @mural.year_created %></h1>
+<h2><%= @mural.mural_address %></h2>
+<h3><%= @mural.artist_name %>  <%= @mural.artist_name2 %>  <%= @mural.artist_name3 %></h3>
+
+<p><%= link_to "Edit", edit_mural_path(@mural) %></p>
+<p><%= link_to "Delete", mural_path(@mural), :data => {:confirm => "Are you sure you want to delete this mural?", :method => "delete" } %></p>

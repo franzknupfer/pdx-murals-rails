@@ -1,9 +1,6 @@
 class MuralsController < ApplicationController
   def index
-    @murals = Mural.all
-  end
-
-  def show
+    @murals = Mural.order(:mural_name)
   end
 
   def new
@@ -21,13 +18,29 @@ class MuralsController < ApplicationController
     end
   end
 
+  def show
+    @mural = Mural.find(params[:id])
+  end
+
   def edit
+    @mural = Mural.find(params[:id])
   end
 
   def update
+    @mural = Mural.find(params[:id])
+    if @mural.update(mural_params)
+      flash[:notice] = "This mural has been updated."
+      redirect_to murals_path
+    else
+      flash[:notice] = "Please try again."
+      render :edit
+    end
   end
 
   def destroy
+    @mural = Mural.find(params[:id])
+    @mural.destroy
+    redirect_to murals_path
   end
 
   private

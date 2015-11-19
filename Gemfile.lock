@@ -87,6 +87,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    geocoder (1.2.12)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
@@ -239,6 +240,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  geocoder
   gmaps4rails
   jquery-rails
   launchy
@@ -257,3 +259,6 @@ DEPENDENCIES
   turbolinks
   uglifier
   web-console
+
+BUNDLED WITH
+   1.10.6
