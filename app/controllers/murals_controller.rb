@@ -1,6 +1,10 @@
 class MuralsController < ApplicationController
   def index
-    @murals = Mural.order(:mural_name)
+    @murals = Mural.all
+    @hash = Gmaps4rails.build_markers(@murals) do |mural, marker|
+      marker.lat mural.latitude
+      marker.lng mural.longitude
+    end
   end
 
   def new
@@ -10,8 +14,13 @@ class MuralsController < ApplicationController
   def create
     @mural = Mural.new(mural_params)
     if @mural.save
-      flash[:notice] = "Mural saved."
-      redirect_to murals_path
+      if (@mural.latitude || @mural.longitude) === nil
+        flash[:notice] = "This address cannot be geocoded. Please enter a working address."
+        render :new
+      else
+        flash[:notice] = "Mural saved."
+        redirect_to murals_path
+      end
     else
       flash[:notice] = "Please try again."
       render :new
