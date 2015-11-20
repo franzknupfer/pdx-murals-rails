@@ -4,7 +4,7 @@ class MuralsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@murals) do |mural, marker|
       marker.lat mural.latitude
       marker.lng mural.longitude
-      marker.infowindow %Q(<h1>#{mural.mural_name}</h1><p>#{mural.artist_name}</p>)
+      marker.infowindow %Q(<img src="#{mural.attached_image.url(:medium)}"><h1>#{mural.mural_name}</h1><h3>#{mural.artist_name}</h3>)
     end
   end
 

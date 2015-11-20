@@ -4,6 +4,8 @@ class Mural < ActiveRecord::Base
   validates :year_created, :presence => true
   validates :artist_name, :presence => true
   validates :mural_address, :presence => true
+  validates :attached_image, attachment_presence: true
+  validates_with AttachmentPresenceValidator, attributes: :attached_image
 
   geocoded_by :mural_address
   after_validation :geocode
