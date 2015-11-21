@@ -14,8 +14,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <a class="pull-left", href="/"><span id="logo"></span></a>
-        <a href="/", class="navbar-brand">Portland Murals</a>
-        <li class="navbar-right"><a href="/">See all murals</a></li>
+        <li><%= link_to "Map", map_index_path %></li>
+        <li class="navbar-right"><%= link_to "All murals", murals_path %></li>
         <li><%= link_to "Add mural", new_mural_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->

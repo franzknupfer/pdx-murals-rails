@@ -13,6 +13,8 @@ gem 'coffee-rails'
 
 gem 'jquery-rails'
 
+gem 'jquery-turbolinks'
+
 gem 'turbolinks'
 
 gem 'bootstrap-sass'
