@@ -13,6 +13,10 @@ class MuralsController < ApplicationController
       if (@mural.latitude || @mural.longitude) === nil
         flash[:notice] = "This address cannot be geocoded. Please enter a working address."
         render :new
+      elsif (@mural.latitude < 45.433318) || (@mural.latitude > 45.651172)
+        flash[:notice] = "This address is not in Portland. Please enter a Portland address."
+          # -122.836649, -122.472813
+        render :new
       else
         flash[:notice] = "Mural saved."
         redirect_to murals_path
@@ -55,6 +59,6 @@ class MuralsController < ApplicationController
 
   private
   def mural_params
-    params.require(:mural).permit(:mural_name, :year_created, :artist_name, :artist_name2, :artist_name3, :mural_address, :photo_credit, :attached_image)
+    params.require(:mural).permit(:mural_name, :year_created, :artist_name, :artist_name2, :artist_name3, :mural_address, :photo_credit, :attached_image, :region)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120001045) do
+ActiveRecord::Schema.define(version: 20151121060310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20151120001045) do
     t.string   "mural_name"
     t.string   "year_created"
     t.string   "artist_name"
-    t.string   "artist_name2"
-    t.string   "artist_name3"
     t.string   "mural_address"
     t.string   "photo_credit"
     t.datetime "created_at"
@@ -32,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151120001045) do
     t.string   "attached_image_content_type"
     t.integer  "attached_image_file_size"
     t.datetime "attached_image_updated_at"
+    t.string   "region"
   end
 
 end

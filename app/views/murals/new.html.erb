@@ -3,11 +3,10 @@
   <%= bootstrap_form_for @mural, :url => murals_path, :html => { :multipart => true} do |f| %>
     <%= f.text_field :mural_name %>
     <br>
-    <%= f.text_area :year_created %>
+    <%= f.select(:region, options_for_select([["North", "North"], ["Northeast", "Northeast"], ["Northwest", "Northwest"], ["Southwest/Downtown", "Southwest/Downtown"], ["Southeast", "Southeast"]]), { include_blank: "Select Region" }) %>
+    <%= f.select(:year_created, options_for_select([["2013", "2013"], ["2014", "2014"], ["2015", "2015"]]), { include_blank: "Select Year"}) %>
     <br>
     <%= f.text_area :artist_name %>
-    <%= f.text_area :artist_name2 %>
-    <%= f.text_area :artist_name3 %>
     <%= f.text_area :mural_address %>
     <%= f.text_area :photo_credit %>
     <%= f.file_field :attached_image %>
