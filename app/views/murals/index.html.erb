@@ -1,5 +1,16 @@
 <h1>Portland Murals</h1>
 
 <% @murals.each do |mural| %>
-  <p><%= link_to mural.mural_name, mural_path(mural) %></p>
+  <div id="mural_container">
+    <%= link_to image_tag(mural.attached_image), mural_path(mural) %>
+    <h3><%= link_to mural.mural_name, mural_path(mural) %></h3>
+    <p><%= mural.year_created %> </p>
+    <p><%= mural.mural_address %> </p>
+    <p><%= mural.artist_name %> </p>
+    <p><%= mural.artist_name2 %> </p>
+    <p><%= mural.artist_name3 %> </p>
+    <p><%= mural.photo_credit %> </p>
+  </div>
+
+
 <% end %>

@@ -25,6 +25,11 @@ class MuralsController < ApplicationController
 
   def show
     @mural = Mural.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@mural) do |mural, marker|
+      marker.lat mural.latitude
+      marker.lng mural.longitude
+      marker.infowindow mural.mural_name
+    end
   end
 
   def edit

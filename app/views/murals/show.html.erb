@@ -3,5 +3,19 @@
 <h2><%= @mural.mural_address %></h2>
 <h3><%= @mural.artist_name %>  <%= @mural.artist_name2 %>  <%= @mural.artist_name3 %></h3>
 
+<div style='width: 600px;'>
+  <div id="map" style='width: 500px; height: 500px;'></div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(17);
+  });
+</script>
+
 <p><%= link_to "Edit", edit_mural_path(@mural) %></p>
 <p><%= link_to "Delete", mural_path(@mural), :data => {:confirm => "Are you sure you want to delete this mural?", :method => "delete" } %></p>
