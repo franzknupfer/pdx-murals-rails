@@ -1,3 +1,5 @@
+<% render "layouts/errors", :object => @mural %>
+
 <h1>Add a mural</h1>
 
   <%= bootstrap_form_for @mural, :url => murals_path, :html => { :multipart => true} do |f| %>
