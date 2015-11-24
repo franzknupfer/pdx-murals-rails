@@ -1,17 +1,25 @@
 <h1>Portland Murals</h1>
 
-<!-- Add sort feature for year, region, alphabetic by mural name -->
+  <h3>Sort by:</h3>
+  <h4><%= link_to "Name", :sort => "mural_name" %>  &nbsp;  <%= link_to "Year", :sort => "year_created" %>  &nbsp;  <%= link_to "Region", :sort => "region" %>  &nbsp;  <%= link_to "Artist", :sort => "artist_name" %></h4>
 
-<% @murals.each do |mural| %>
-  <div id="mural_container">
-    <%= link_to image_tag(mural.attached_image), mural_path(mural) %>
-    <h3><%= link_to mural.mural_name, mural_path(mural) %></h3>
-    <p><%= mural.region %></p>
-    <p><%= mural.year_created %> </p>
-    <p><%= mural.mural_address %> </p>
-    <p><%= mural.artist_name %> </p>
-    <p><%= mural.photo_credit %> </p>
-  </div>
-
-
-<% end %>
+<table class="mural_table">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Region</th>
+    <th>Address</th>
+    <th>Artist</th>
+  </tr>
+  <% @murals.each do |mural| %>
+    <tr>
+      <td id="mural_container"><%= link_to image_tag(mural.attached_image), mural_path(mural) %></td>
+      <td><%= link_to mural.mural_name, mural_path(mural) %></td>
+      <td><%= mural.year_created %> </td>
+      <td><%= mural.region %></td>
+      <td><%= mural.mural_address %> </td>
+      <td><%= mural.artist_name %> </td>
+    </tr>
+  <% end %>
+</table>

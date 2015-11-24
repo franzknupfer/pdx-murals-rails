@@ -1,6 +1,7 @@
 class MuralsController < ApplicationController
   def index
-    @murals = Mural.all
+    @murals = Mural.order(params[:sort])
+    # need to add strong parameters to this
   end
 
   def new
@@ -10,17 +11,8 @@ class MuralsController < ApplicationController
   def create
     @mural = Mural.new(mural_params)
     if @mural.save
-      if (@mural.latitude || @mural.longitude) === nil
-        flash[:notice] = "This address cannot be geocoded. Please enter a working address."
-        render :new
-      elsif (@mural.latitude < 45.433318) || (@mural.latitude > 45.651172)
-        flash[:notice] = "This address is not in Portland. Please enter a Portland address."
-          # -122.836649, -122.472813
-        render :new
-      else
-        flash[:notice] = "Mural saved."
-        redirect_to murals_path
-      end
+      flash[:notice] = "Mural saved."
+      redirect_to murals_path
     else
       flash[:notice] = "Please try again."
       render :new
