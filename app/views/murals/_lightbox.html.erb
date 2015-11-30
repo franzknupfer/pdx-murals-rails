@@ -1,5 +1,5 @@
 <div id="lightbox">
-  <h1><%= @mural.mural_name %></h1>
+  <h1 class="lightbox_header"><%= @mural.mural_name %></h1>
   <div id="show_image"><%= image_tag @mural.attached_image.url %></div>
   <h3><%= link_to "Close", murals_path, id: "hide_lightbox", class: "btn btn-success" %></h3>
 </div>

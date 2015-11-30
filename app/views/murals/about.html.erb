@@ -1,16 +1,36 @@
-<h1>About this project</h1>
+<div class="about_intro">
 
-<h4>
-  This project combines two things I love: Portland's murals and coding. In 2013, a small group of Portland visionaries created <a href="http://www.forestforthetreesnw.com/about/">Forest For The Trees NW</a>, a non-profit that brings artists from all over the world to paint murals around the city. You can check out their beautiful website <a href="http://www.forestforthetreesnw.com/">here</a>.
-</h4>
+  <div id="seashell"><%= image_tag("seashell_mural.jpg", :alt => "Figure with a seashell for a head.") %></div>
 
-<h4>
-  While the FFTTNW website does a great job documenting the project, it doesn't include a clickable map with markers that show all the murals in the city, regardless of the year they were created. This project provides that map by combining Rails with the following gems: Paperclip (for easily uploading images); Gmaps4rails (for creating maps with markers); and Geocoder (to geocode mural addresses).
-</h4>
+  <h3>About this project</h3>
 
+  <p>
+    This project combines two things I love: Portland's murals and coding. In 2013, a small group of Portland visionaries created <a href="http://www.forestforthetreesnw.com/about/">Forest For The Trees NW</a>, a non-profit that brings artists from all over the world to paint murals around the city. You can check out their beautiful website <a href="http://www.forestforthetreesnw.com/">here</a>.
+  </p>
 
-<h1>About me</h1>
+  <p>
+    While the FFTTNW website does a great job documenting the project, it doesn't include a clickable map with markers that show all the murals in the city, regardless of the year they were created. This project provides that map by combining Rails with the following gems: Paperclip (for easily uploading images); Gmaps4rails (for creating maps with markers); and Geocoder (to geocode mural addresses). The website also includes an AJAX lightbox built from scratch, a Postgres database on the backend, deployment to Heroku, and Devise for admin authentication and authorization.
+  </p>
 
-<h4>
-  I fell in love with Ruby about a year ago, after a close friend of mine (and software developer at Upworthy) suggested I try it out. I graduated from the Epicodus Code School (Ruby/JavaScript/Rails) in the summer of 2015, and then went on to do an internship at Cast Iron Coding, where I worked on a complex codebase that combined a Backbone/Marionette JS framework on the front end with a Rails API on the back end. After finishing my internship, I continued to develop my coding passions, including Ruby and Rails. Other projects I've worked on include building a JS lightbox from scratch, building a basic API with Sinatra, solving Project Euler problems in Ruby, and working on a Rails app for health practitioners that will include scheduling and payment options.
-</h4>
+  <div id="profile_pic"><%= image_tag("franz_profile_pic.jpg", :alt => "Picture of me with my baby son Leo.") %></div>
+
+  <h3>About me</h3>
+
+  <p>
+    I fell in love with Ruby about a year ago, after a close friend and software developer at Upworthy suggested I try it out. I graduated from Epicodus Code School (Ruby/JavaScript/Rails) in the summer of 2015, then went on to do an internship at Cast Iron Coding, where I worked on a complex codebase that combined a Backbone/Marionette JS framework on the front end with a Rails API on the back end. After finishing my internship, I continued to develop my coding passions, especially Ruby and Rails. Other projects I've worked on include building a JS lightbox from scratch, building a basic API with Sinatra, solving Project Euler problems in Ruby, and working on a Rails app for health practitioners that will include scheduling and payment options.
+  </p>
+
+  <p>
+    I'm also a writer that loves the arts, which is part of why I was inspired to build this project!
+  </p>
+  <p>
+     Check out my <a href="http://franzknupfer.herokuapp.com/">portfolio website</a> to learn more about my coding skills. The site uses Rails, AJAX and Devise, and also makes use of extensive testing via rspec, Factory Girl, phantom, and other gems.
+  </p>
+
+  <p>
+    Check out my writing at <a href="http://franzknupfer.github.io/">franzknupfer.github.io</a>, a static site built with HTML, CSS and Twitter Bootstrap.
+  </p>
+  <p>
+    For code samples, check out <a href="https://github.com/franzknupfer">my Github profile</a>.
+  </p>
+</div>

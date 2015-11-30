@@ -1,12 +1,11 @@
 <div class="lightbox_container">
   <div class="container">
 
-    <div id="centered_text">
-      <h1>Portland Murals</h1>
-      <h3>Click on an image for a full-size lightbox of the mural.</h3>
+    <div class="intro">
+      <p>Click on an image for a full-size lightbox.</p>
 
-      <h3 id="sorter">Sort by:
-      <%= link_to "Name", :sort => "mural_name" %> | <%= link_to "Year", :sort => "year_created" %> | <%= link_to "Region", :sort => "region" %> | <%= link_to "Artist", :sort => "artist_name" %></h3>
+      <p id="sorter">Sort by:
+      <%= link_to "Name", :sort => "mural_name" %> | <%= link_to "Year", :sort => "year_created" %> | <%= link_to "Region", :sort => "region" %> | <%= link_to "Artist", :sort => "artist_name" %></p>
     </div>
 
     <table class="table">
