@@ -29,6 +29,9 @@
             <td><%= mural.region %></td>
             <td><%= mural.mural_address %> </td>
             <td><%= mural.artist_name %> </td>
+            <% if current_user.present? && current_user.admin? %>
+              <td><%= link_to "Edit", edit_mural_path(mural) %></td>
+            <% end %>
           </tr>
         </tbody>
       <% end %>

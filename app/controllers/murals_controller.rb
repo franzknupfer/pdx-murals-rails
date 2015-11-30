@@ -9,7 +9,11 @@ class MuralsController < ApplicationController
   end
 
   def new
-    @mural = Mural.new
+    if current_user.present? && current_user.admin?
+      @mural = Mural.new
+    else
+      redirect_to murals_path
+    end
   end
 
   def create
@@ -33,7 +37,11 @@ class MuralsController < ApplicationController
   end
 
   def edit
-    @mural = Mural.find(params[:id])
+    if current_user.present? && current_user.admin?
+      @mural = Mural.find(params[:id])
+    else
+      redirect_to murals_path
+    end
   end
 
   def update
