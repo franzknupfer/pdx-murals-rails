@@ -1,4 +1,10 @@
+<div id="infobox">
+  <%= link_to image_tag(mural.attached_image), mural_path(mural), id: "mural_lightbox_#{ mural.id }", remote: true %>
+  <p><span id="bold">Name: </span><%= mural.mural_name %></p>
+  <p><span id="bold">Year: </span><%= mural.year_created %></p>
+  <p><span id="bold">Created by: </span><%= mural.artist_name %></p>
+  <p><span id="bold">Address: </span><%= mural.mural_address %></p>
+</div>
 
 
-<%= link_to image_tag(mural.attached_image), mural_path(mural), id: "mural_lightbox_#{ mural.id }", remote: true %>
-<p><%= mural.mural_name %></p>
+<span id="bold"></span>
