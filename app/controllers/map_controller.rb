@@ -11,7 +11,7 @@ class MapController < ApplicationController
       })
       marker.infowindow %Q(<div id="infobox">
       <a href="/murals/#{mural.id}">
-      <img src="#{mural.attached_image.url(:medium)}"><h1>#{mural.mural_name}</h1><h3>#{mural.artist_name}</h3></a></div>)
+      <img src="#{mural.attached_image.url(:medium)}"><p><strong>Name:</strong> #{mural.mural_name} </p><p><strong>Year:</strong> #{ mural.year_created } </p><p><strong>Address:</strong> #{ mural.mural_address }<p><strong>Created by:</strong> #{mural.artist_name}</p></a></div>)
     end
   end
 
