@@ -18,3 +18,8 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+
+  $("#hide_lightbox").click(function() {
+    console.log("image clicked");
+    $("lightbox").hide();
+  });

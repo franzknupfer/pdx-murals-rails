@@ -4,6 +4,10 @@ class MuralsController < ApplicationController
     # need to add strong parameters to this
   end
 
+  def about
+
+  end
+
   def new
     @mural = Mural.new
   end

@@ -1,31 +1,37 @@
-<div class="container">
-  <h1>Portland Murals</h1>
+<div class="lightbox_container">
+  <div class="container">
 
-  <h3>Sort by:</h3>
-  <h4 id="sorter"><%= link_to "Name", :sort => "mural_name" %>  &nbsp;  <%= link_to "Year", :sort => "year_created" %>  &nbsp;  <%= link_to "Region", :sort => "region" %>  &nbsp;  <%= link_to "Artist", :sort => "artist_name" %></h4>
+    <div id="centered_text">
+      <h1>Portland Murals</h1>
+      <h3>Click on an image for a full-size lightbox of the mural.</h3>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="col-md-3">Image</th>
-        <th class="col-md-2">Name</th>
-        <th class="col-md-2"> Year</th>
-        <th class="col-md-1">Region</th>
-        <th class="col-md-2">Address</th>
-        <th class="col-md-2">Artist</th>
-      </tr>
-    </thead>
-    <% @murals.each do |mural| %>
-      <tbody>
+      <h3 id="sorter">Sort by:
+      <%= link_to "Name", :sort => "mural_name" %> | <%= link_to "Year", :sort => "year_created" %> | <%= link_to "Region", :sort => "region" %> | <%= link_to "Artist", :sort => "artist_name" %></h3>
+    </div>
+
+    <table class="table">
+      <thead>
         <tr>
-          <td id="mural_container"><%= link_to image_tag(mural.attached_image), mural_path(mural) %></td>
-          <td><%= link_to mural.mural_name, mural_path(mural) %></td>
-          <td><%= mural.year_created %> </td>
-          <td><%= mural.region %></td>
-          <td><%= mural.mural_address %> </td>
-          <td><%= mural.artist_name %> </td>
+          <th class="col-md-3">Image</th>
+          <th class="col-md-2">Name</th>
+          <th class="col-md-2">Year</th>
+          <th class="col-md-1">Region</th>
+          <th class="col-md-2">Address</th>
+          <th class="col-md-2">Artist</th>
         </tr>
-      </tbody>
-    <% end %>
-  </table>
+      </thead>
+      <% @murals.each do |mural| %>
+        <tbody>
+          <tr>
+            <td id="mural_container"><%= link_to image_tag(mural.attached_image), mural_path(mural), id: "mural_lightbox_#{ mural.id }", remote: true %></div></td>
+            <td><%= mural.mural_name %></td>
+            <td><%= mural.year_created %> </td>
+            <td><%= mural.region %></td>
+            <td><%= mural.mural_address %> </td>
+            <td><%= mural.artist_name %> </td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
 </div>

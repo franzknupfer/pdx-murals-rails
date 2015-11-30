@@ -9,4 +9,8 @@ class MapController < ApplicationController
       <img src="#{mural.attached_image.url(:medium)}"><h1>#{mural.mural_name}</h1><h3>#{mural.artist_name}</h3></a></div>)
     end
   end
+
+  def show
+    @mural = Mural.find(params[:id])
+  end
 end
