@@ -18,7 +18,6 @@
 @import bootstrap
 
 body
-	padding-top: 70px
 	font-family: sans-serif
 	background: white
 
@@ -71,3 +70,80 @@ a:link
 
 	img
 		width: 80%
+
+#nav_bar
+	background: #434E3C
+	width: auto
+
+#nav_bar ul
+	list-style: none
+	margin: 0
+	padding: 0
+	line-height: 1
+	display: block
+	zoom: 1
+
+#nav_bar ul:after
+	content: " "
+	display: block
+	font-size: 0
+	height: 0
+	clear: both
+	visibility: hidden
+
+#nav_bar ul li
+	display: inline-block
+	padding: 0
+	margin: 0
+
+	.right
+		text-align: right
+
+#nav_bar.align-right ul li
+	float: right
+
+#nav_bar.align-center ul
+	text-align: center
+
+#nav_bar ul li a
+	color: #FFFFFF
+	text-decoration: none
+	display: block
+	padding: 30px 50px
+	font-family: 'Open Sans', sans-serif
+	font-weight: 700
+	text-transform: uppercase
+	font-size: 14px
+	position: relative
+	-webkit-transition: color .25s
+	-moz-transition: color .25s
+	-ms-transition: color .25s
+	-o-transition: color .25s
+	transition: color .25s
+
+#nav_bar ul li a:hover
+	color: #F4B350
+
+#nav_bar ul li a:hover:before
+	width: 100%
+
+#nav_bar ul li.active a:before
+	width: 100%
+
+@media screen and (max-width: 768px)
+	#nav_bar ul li
+		float: none
+		display: block
+
+	#nav_bar ul li a
+		width: 100%
+
+	#nav_bar ul li.last > a,
+	#nav_bar ul li:last-child > a
+		border: 0
+
+	#nav_bar ul li a:after
+		display: none
+
+	#nav_bar ul li a:before
+		display: none
