@@ -1,0 +1,5 @@
+<div id="lightbox">
+  <h1>This is the map lightbox!!!!</h1>
+  <h1><%= @mural.mural_name %></h1>
+  <%= link_to image_tag(@mural.attached_image.url), map_path, id: "hide_map_lightbox" %>
+</div>

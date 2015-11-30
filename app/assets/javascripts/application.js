@@ -20,6 +20,9 @@
 //= require_tree .
 
   $("#hide_lightbox").click(function() {
-    console.log("image clicked");
+    $("lightbox").hide();
+  });
+
+  $("#hide_map_lightbox").click(function() {
     $("lightbox").hide();
   });
