@@ -31,7 +31,7 @@ gem 'gmaps4rails'
 
 gem 'geocoder'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 gem 'fog'
 
