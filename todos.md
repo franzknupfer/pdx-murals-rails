@@ -1,0 +1,5 @@
+-Change callback so that Portland,OR is always appended to address but not appended to listed address.
+-Sanitize sort feature against SQL injections.
+-Add styling to navbar.
+-Add styling to footer.
+-Potentially add lightbox, e.g. AJAX for show.

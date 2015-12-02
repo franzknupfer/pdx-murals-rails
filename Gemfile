@@ -31,6 +31,12 @@ gem 'gmaps4rails'
 
 gem 'geocoder'
 
+gem 'aws-sdk'
+
+gem 'fog'
+
+gem 'figaro'
+
 group :development do
 
   gem 'byebug'
