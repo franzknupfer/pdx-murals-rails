@@ -15,16 +15,7 @@ class Mural < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode
 
-  has_attached_file :attached_image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
-  :url => ":s3_domain_url",
-  :path => "public/murals/:id/:style_:basename.:extension",
-  :storage => :fog,
-  :fog_credentials => {
-    provider: 'AWS',
-    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
-  },
-  fog_directory: ENV["FOG_DIRECTORY"]
+  has_attached_file :attached_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   validates_attachment_content_type :attached_image, :content_type => /\Aimage\/.*\Z/
 end
