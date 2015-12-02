@@ -33,8 +33,6 @@ gem 'geocoder'
 
 gem 'aws-sdk', '< 2.0'
 
-gem 'fog'
-
 gem 'figaro'
 
 group :development do
