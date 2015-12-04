@@ -2,13 +2,20 @@
   <div class="container">
 
     <div class="intro">
-      <p>Click on an image for a full-size lightbox.</p>
+      <h1>Portland Murals</h1>
+          <div id="image_row">
+            <%= image_tag("1.JPG") %><%=  image_tag("2.JPG") %><%= image_tag("3.JPG") %>
+          </div>
 
-      <p id="sorter">Sort by:
-      <%= link_to "Name", :sort => "mural_name" %> | <%= link_to "Year", :sort => "year_created" %> | <%= link_to "Region", :sort => "region" %> | <%= link_to "Artist", :sort => "artist_name" %></p>
+        <h2>Some of the best art in Portland isn't in museums or galleries. It's painted on the walls of buildings both old and new. Since 2013, <a href="http://www.forestforthetreesnw.com/">Forest for the Trees NW</a> has transformed many of the city's public spaces. Click on an image below for a full-size lightbox.</h2>
+
     </div>
 
     <table class="table">
+      <div id="sorter_box">
+        <p id="sorter">Sort by:
+        <%= link_to "Name", :sort => "mural_name" %> | <%= link_to "Year", :sort => "year_created" %> | <%= link_to "Region", :sort => "region" %> | <%= link_to "Artist", :sort => "artist_name" %></p>
+      </div>
       <thead>
         <tr>
           <th class="col-md-3">Image</th>
@@ -22,7 +29,7 @@
       <% @murals.each do |mural| %>
         <tbody>
           <tr>
-            <td id="mural_container"><%= link_to image_tag(mural.attached_image), mural_path(mural), id: "mural_lightbox_#{ mural.id }", remote: true %></div></td>
+            <td id="mural_container"><%= link_to image_tag(mural.attached_image), mural_path(mural), id: "mural_lightbox_#{ mural.id }", remote: true %></td>
             <td><%= mural.mural_name %></td>
             <td><%= mural.year_created %> </td>
             <td><%= mural.region %></td>
