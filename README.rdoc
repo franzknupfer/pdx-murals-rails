@@ -1,28 +1,21 @@
-== README
+== Portland Murals
+== Franz Knupfer 2015
+== This app is deployed to Heroku at http://portlandmurals.herokuapp.com/.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Portland Murals is a Rails application that combines two personal interests: coding and the murals of Portland, Oregon. This application incorporates:
 
-Things you may want to cover:
+* Devise for admin authentication
 
-* Ruby version
+* built-in map via Googlemaps with custom, dynamic markers
 
-* System dependencies
+* Geocoder for translating addresses to lat and long
 
-* Configuration
+* AJAX lightbox built from scratch for enlarging images
 
-* Database creation
+* AWS S3 for hosting images
 
-* Database initialization
+* Paperclip for image upload
 
-* How to run the test suite
+* Heroku deployment
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Twitter Bootstrap and HTML/Sass for design markup
